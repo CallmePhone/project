@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedOut, SignInButton } from "@clerk/nextjs";
 import Footer from "./Components/Footer";
 
 export default function Home() {
@@ -20,22 +20,78 @@ export default function Home() {
                         <h1 className="text-2xl sm:text-3xl font-bold text-blue-600">
                             ระบบติดตามและจัดการอะไหล่รถยนต์และมอเตอร์ไซค์ของเรา ✨
                         </h1>
-                        <p className="mt-4 text-gray-700 text-base sm:text-lg leading-relaxed">
-                            ระบบนี้ถูกออกแบบมาเพื่อช่วยให้คุณสามารถติดตามและจัดการอะไหล่รถยนต์และมอเตอร์ไซค์ของคุณได้อย่างมีประสิทธิภาพ
-                            <br />
-                            <br />
-                            คุณสามารถเพิ่ม ลบ แก้ไข และติดตามประวัติการเปลี่ยนอะไหล่ได้อย่างง่ายดาย
-                            <br />
-                            <br />
-                            นอกจากนี้ยังมีฟีเจอร์อื่น ๆ ที่จะช่วยให้คุณจัดการรถยนต์และมอเตอร์ไซค์ของคุณได้อย่างสะดวกสบาย
-                        </p>
                     </section>
 
-                    <section>
-                        <ol className="list-decimal list-inside space-y-2 text-gray-800">
-                            <li>พัฒนาด้วย Next.js และ Tailwind CSS</li>
-                        </ol>
+                    <section className="text-center">
+                        <h1 className="text-2xl font-bold">ระบบจัดการอะไหล่รถ</h1>
+                        <p className="text-[20px]">ระบบที่จะช่วยให้คุณจัดการกับอะไหล่รถยนต์และมอเตอร์ไซค์ของตุณได้ตลอดเวลา</p>
                     </section>
+
+                    <div className="flex flex-col sm:flex-row items-center gap-10 mt-6">
+                        {/* ข้อความด้านซ้าย */}
+                        <div className="sm:w-1/2 text-center sm:text-left flex flex-col items-center sm:items-start">
+                            <img
+                                className="rounded-sm mb-4 shadow-md"
+                                src="/img/icon2.ico"
+                                alt="icon"
+                                width={50}
+                                height={50}
+                            />
+                            <h1 className="text-2xl font-bold">หน้าหลัก</h1>
+                            <p className="text-lg mt-2 text-blue-500">ดูรถของท่าน</p>
+                            <p className="text-[18px] text-gray-700 mt-2">
+                                หน้าหลัก มี Features ดูข้อมูลยานพาหนะของท่านและเพิ่มกัดจัดการซื้ออะไหล่ต่างๆ ได้อย่างสะดวกและบอกเวลาที่เปลี่ยนอะไหล่
+                                แค่กดเมนูที่ 1 บน Navbar ของหน้าเวป
+                            </p>
+                        </div>
+
+                        {/* เส้นคั่นแบบขีด ๆ แนวตั้ง */}
+                        <div className="hidden sm:flex justify-center">
+                            <div className="h-[200px] border-l border-dashed border-gray-600 mx-6"></div>
+                        </div>
+
+                        {/* รูปภาพด้านขวา */}
+                        <div className="sm:w-1/2">
+                            <img
+                                src="/img/2.png"
+                                alt="vehicle example"
+                                className="w-full h-auto rounded-lg shadow-lg"
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row items-center gap-10 mt-6">
+                        {/* ข้อความด้านซ้าย */}
+                        <div className="sm:w-1/2">
+                            <img
+                                src="/img/1.png"
+                                alt="vehicle example"
+                                className="w-full h-auto rounded-lg shadow-lg"
+                            />
+                        </div>
+
+                        {/* เส้นคั่นแบบขีด ๆ แนวตั้ง */}
+                        <div className="hidden sm:flex justify-center">
+                            <div className="h-[200px] border-l border-dashed border-gray-600 mx-6"></div>
+                        </div>
+
+                        {/* รูปภาพด้านขวา */}
+                        <div className="sm:w-1/2 text-center sm:text-left flex flex-col items-center sm:items-start">
+                            <img
+                                className="rounded-sm mb-4 shadow-md"
+                                src="/img/icon2.ico"
+                                alt="icon"
+                                width={50}
+                                height={50}
+                            />
+                            <h1 className="text-2xl font-bold">ยานพาหนะของฉัน</h1>
+                            <p className="text-lg mt-2 text-blue-500">สามารถเพิ่ม-ดูรถของท่าน</p>
+                            <p className="text-[18px] text-gray-700 mt-2">
+                                ยานพาหนะของฉัน มี Features เพิ่มและดูข้อมูลยานพาหนะของท่านได้อย่างสะดวกและตลอดเวลา
+                                แค่กดเมนูที่ 2 บน Navbar ของหน้าเวป
+                            </p>
+                        </div>
+                    </div>
+
 
                     <section className="flex flex-col sm:flex-row gap-4 sm:justify-start justify-center">
                         <div className="flex items-center space-x-4">

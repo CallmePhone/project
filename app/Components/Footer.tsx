@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/nextjs";
 import { Bot } from 'lucide-react';
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Footer() {
@@ -55,10 +56,10 @@ export default function Footer() {
                 {showMessage && (
                     <>
                         <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-fade-in">
-                            <p>📌 ฉันสามารถช่วยแนะนำการใช้งานระบบให้คุณได้</p>
+                            <Link href="/information" target="_blank"><p>❌ ไม่สามารถเพิ่มข้อมูลยานพาหนะได้</p></Link>
                         </div>
                         <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-fade-in">
-                            <p>❗❗ มีฟีเจอร์อะไรบ้าง</p>
+                            <p>📌 ฉันสามารถช่วยแนะนำการใช้งานระบบให้คุณได้</p>
                         </div>
                     </>
                 )}
@@ -66,11 +67,13 @@ export default function Footer() {
                 {/* Bot Button */}
                 <button
                     onClick={handleBotClick}
-                    className={`bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition-transform duration-200 ${animate ? "scale-110" : ""
-                        }`}
+                    className={`bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-3 rounded-full shadow-xl
+                hover:from-blue-600 hover:to-indigo-600 hover:ring-4 hover:ring-blue-300/30
+                transition-all duration-300 ease-in-out transform ${animate ? "scale-110" : ""}`}
                 >
-                    <Bot className="text-gray-500 w-6 h-6" />
+                    <Bot className="w-6 h-6 text-white hover:text-black transition-colors duration-300" />
                 </button>
+
             </div>
 
             {/* Copyright */}
