@@ -23,7 +23,7 @@ const Navbar = ({ role = "user" }) => {
     const userLinks = [
         { name: "หน้าหลัก", href: "/show", icon: <Home size={18} /> },
         { name: "ยานพาหนะของฉัน", href: "/vehicles", icon: <Car size={18} /> },
-        { name: "ประวัติการเปลี่ยนอะไหล่", href: "/partHistoryPage", icon: <History size={18} /> },
+        { name: "ประวัติการเปลี่ยน-ซื้ออะไหล่", href: "/partHistoryPage", icon: <History size={18} /> },
     ];
 
     const links = role === "admin" ? adminLinks : userLinks;

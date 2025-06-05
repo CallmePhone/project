@@ -1,10 +1,10 @@
-import { useUser } from "@clerk/nextjs";
+'use client';
+
 import { Bot } from 'lucide-react';
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Footer() {
-    const { user } = useUser();
     const [showMessage, setShowMessage] = useState(false);
     const [animate, setAnimate] = useState(false);
 
@@ -52,29 +52,40 @@ export default function Footer() {
 
             {/* Floating Bot Section */}
             <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-                {/* Message Boxes */}
+                {/* Default Message Before Click */}
+                {!showMessage && (
+                    <div className="bg-black text-sm text-gray-500 px-4 py-2 rounded-full shadow-md animate-pulse">
+                        <p>💬
+
+                        </p>
+                    </div>
+                )}
+
+                {/* Message Boxes After Click */}
                 {showMessage && (
-                    <>
-                        <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-fade-in">
-                            <Link href="/information" target="_blank"><p>❌ ไม่สามารถเพิ่มข้อมูลยานพาหนะได้</p></Link>
+                    <div className="flex flex-col gap-2 animate-fade-in-up">
+                        <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-slide-in">
+                            <Link href="/information" target="_blank">
+                                <p>❌ ไม่สามารถเพิ่มข้อมูลยานพาหนะได้</p>
+                            </Link>
                         </div>
-                        <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-fade-in">
+                        <div className="bg-white text-sm text-gray-700 p-4 rounded-lg shadow-lg max-w-xs animate-slide-in delay-100">
                             <p>📌 ฉันสามารถช่วยแนะนำการใช้งานระบบให้คุณได้</p>
                         </div>
-                    </>
+                    </div>
                 )}
 
                 {/* Bot Button */}
                 <button
                     onClick={handleBotClick}
                     className={`bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-3 rounded-full shadow-xl
-                hover:from-blue-600 hover:to-indigo-600 hover:ring-4 hover:ring-blue-300/30
-                transition-all duration-300 ease-in-out transform ${animate ? "scale-110" : ""}`}
+        hover:from-blue-600 hover:to-indigo-600 hover:ring-4 hover:ring-blue-300/30
+        transition-all duration-300 ease-in-out transform ${animate ? "scale-110" : ""}`}
                 >
-                    <Bot className="w-6 h-6 text-white hover:text-black transition-colors duration-300" />
+                    <Bot className="w-6 h-6 text-white hover:text-black transition-colors duration-300  cursor-pointer" />
                 </button>
-
             </div>
+
 
             {/* Copyright */}
             <div className="mt-6 py-4 text-end text-sm text-gray-400 px-6">

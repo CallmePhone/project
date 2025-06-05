@@ -40,7 +40,7 @@ export default function Home() {
                             <h1 className="text-2xl font-bold">หน้าหลัก</h1>
                             <p className="text-lg mt-2 text-blue-500">ดูรถของท่าน</p>
                             <p className="text-[18px] text-gray-700 mt-2">
-                                หน้าหลัก มี Features ดูข้อมูลยานพาหนะของท่านและเพิ่มกัดจัดการซื้ออะไหล่ต่างๆ ได้อย่างสะดวกและบอกเวลาที่เปลี่ยนอะไหล่
+                                หน้าหลัก มี Features ดูข้อมูลยานพาหนะของท่านและเพิ่มกัดจัดการซื้ออะไหล่ต่างๆ ได้อย่างสะดวกและบอกเวลาที่เปลี่ยนอะไหล่ได้
                                 แค่กดเมนูที่ 1 บน Navbar ของหน้าเวป
                             </p>
                         </div>
@@ -89,6 +89,42 @@ export default function Home() {
                                 ยานพาหนะของฉัน มี Features เพิ่มและดูข้อมูลยานพาหนะของท่านได้อย่างสะดวกและตลอดเวลา
                                 แค่กดเมนูที่ 2 บน Navbar ของหน้าเวป
                             </p>
+                        </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row items-center gap-10 mt-6">
+
+                        {/* รูปภาพด้านขวา */}
+                        <div className="flex flex-col sm:flex-row items-center gap-10 mt-6">
+                            {/* ข้อความด้านซ้าย */}
+                            <div className="sm:w-1/2 text-center sm:text-left flex flex-col items-center sm:items-start">
+                                <img
+                                    className="rounded-sm mb-4 shadow-md"
+                                    src="/img/icon2.ico"
+                                    alt="icon"
+                                    width={50}
+                                    height={50}
+                                />
+                                <h1 className="text-2xl font-bold">ประวัติการเปลี่ยน-ซื้ออะไหล่</h1>
+                                <p className="text-lg mt-2 text-blue-500">ดูประวัติการเปลี่ยน-ซื้ออะไหล่</p>
+                                <p className="text-[18px] text-gray-700 mt-2">
+                                    หน้าหลัก มี Features ดูข้อมูลยานพาหนะของท่านและเพิ่มกัดจัดการซื้ออะไหล่ต่างๆ ได้อย่างสะดวกและบอกเวลาที่เปลี่ยนอะไหล่ได้
+                                    แค่กดเมนูที่ 1 บน Navbar ของหน้าเวป
+                                </p>
+                            </div>
+
+                            {/* เส้นคั่นแบบขีด ๆ แนวตั้ง */}
+                            <div className="hidden sm:flex justify-center">
+                                <div className="h-[200px] border-l border-dashed border-gray-600 mx-6"></div>
+                            </div>
+
+                            {/* รูปภาพด้านขวา */}
+                            <div className="sm:w-1/2">
+                                <img
+                                    src="/img/2.png"
+                                    alt="vehicle example"
+                                    className="w-full h-auto rounded-lg shadow-lg"
+                                />
+                            </div>
                         </div>
                     </div>
 
